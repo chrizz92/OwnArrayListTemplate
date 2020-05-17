@@ -7,8 +7,14 @@ namespace OwnArrayList.ConsoleApp
     {
         private static void Main(string[] args)
         {
+            string headLine = $"{"KatNr",5} | {"Vorname",-20} | {"Nachname",-20} | {"Alter",5}";
+
             Console.WriteLine("Dynamische Schülerliste");
-            Console.WriteLine("=======================");
+            for (int k = 0; k < headLine.Length; k++)
+            {
+                Console.Write("=");
+            }
+            Console.WriteLine();
 
             //Testdaten
             PupilList pupils = new PupilList();
@@ -24,11 +30,17 @@ namespace OwnArrayList.ConsoleApp
             pupils.Insert(1, pupil4);
             pupils.GetAt(1);
             pupils.Sort();
-            pupils.Add(pupil1);
+            pupils.Add(pupil3);
 
+            Console.WriteLine(headLine);
+            for (int k = 0; k < headLine.Length; k++)
+            {
+                Console.Write("=");
+            }
+            Console.WriteLine();
             for (int i = 0; i < pupils.Count; i++)
             {
-                Console.WriteLine($"{pupils.GetAt(i).CatalogNumber,5} | {pupils.GetAt(i).FirstName,-20} | {pupils.GetAt(i).LastName,-20} | {pupils.GetAt(i).Age,3}");
+                Console.WriteLine($"{pupils.GetAt(i).CatalogNumber,5} | {pupils.GetAt(i).FirstName,-20} | {pupils.GetAt(i).LastName,-20} | {pupils.GetAt(i).Age,5}");
             }
         }
     }
